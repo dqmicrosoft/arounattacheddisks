@@ -6,6 +6,13 @@ The disks can be unattached and cannot be deleted if you have created them with 
 
 Even though you have admin permissions you cannot delete the disks because they are managed by the ARO cluster.
 
+
+```sh
+> az disk delete --name arocluster-jkpm9-dynamic-pvc-ac65988b-58dd-49bf-8dda-88f911c46c74  --resource-group aro-t4madwlq
+Are you sure you want to perform this operation? (y/n): y
+(DenyAssignmentAuthorizationFailed) The client 'x' with object id 'y' has permission to perform action 'Microsoft.Compute/disks/delete' on scope '/subscriptions/subID/resourceGroups/aro-t4madwlq/providers/Microsoft.Compute/disks/arocluster-jkpm9-dynamic-pvc-ac65988b-58dd-49bf-8dda-88f911c46c74'; however, the access is denied because of the deny assignment with name 'hatinred' and Id 'z' at scope '/subscriptions/subId/resourcegroups/aro-t4madwlq'.
+```
+
 To delete them you need to create a PV with the disk unttached and bound it to a PVC. The PV must be using the Storage Class with the reclaim policy set to delete.
 
 ## Reproducing Error
