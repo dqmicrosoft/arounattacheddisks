@@ -54,8 +54,6 @@ arocluster-jkpm9-dynamic-pvc-d0f8ae0f-f5bb-4ca4-b4f3-47849480739a  aro-t4madwlq 
 
 ```
 
-![[Pasted image 20230111155425.png]]
-
 ### The Solution
 
 We create a new Storage Class with the Reclaim Policy set to Delete
@@ -138,3 +136,7 @@ persistentvolumeclaim "pvc-to-delete" deleted
 Name                                              ResourceGroup    Location    Zones    Sku          OsType    SizeGb    ProvisioningState
 ------------------------------------------------  ---------------  ----------  -------  -----------  --------  --------  -------------------
 ```
+
+### Disclaimer
+
+This is the solution with this storage classes. You have to adapt to your current ones. If for example you have the binding set for *first consumer* you can use the pod to bound the PV and the PVC.
