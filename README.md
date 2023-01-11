@@ -114,7 +114,7 @@ Ands we apply both
 
 ```sh
 > oc apply -f pv-to-delete-disk.yaml
-> > oc apply -f pvc-to-delete-disk.yaml
+> oc apply -f pvc-to-delete-disk.yaml
 ```
 
 We get this result
@@ -139,4 +139,4 @@ Name                                              ResourceGroup    Location    Z
 
 ### Disclaimer
 
-This is the solution with this storage classes. You have to adapt to your current ones. If for example you have the binding set for *first consumer* you can use the pod to bound the PV and the PVC.
+This is the solution with this storage classes. You have to adapt to your current ones. If for example you have the binding set for *first consumer* you can use the pod to bound the PV to the PVC.
